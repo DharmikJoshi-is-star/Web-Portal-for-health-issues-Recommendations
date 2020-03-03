@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<context:component-scan base-package="com.hashcoder.controller"></context:component-scan>
+	
+	<bean id="internalResourceViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/jsps/"></property>
+	<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+	<bean id="user" class="com.hashcoder.model.User"></bean>
+	<bean id="rating" class="com.hashcoder.model.Rating"></bean>
+	<bean id="query" class="com.hashcoder.model.Query"></bean>
+	<bean id="post" class="com.hashcoder.model.Post"></bean>
+	<bean id="healthProffesional" class="com.hashcoder.model.HealthProffesional"></bean>
+	<bean id="disease" class="com.hashcoder.model.Disease"></bean>
+	<bean id="answer" class="com.hashcoder.model.Answer"></bean>
+	<bean id="login" class="com.hashcoder.model.Login"></bean>
+	
+	<bean id="loginService" class="com.hashcoder.service.LoginService"></bean>
+	<bean id="userService" class="com.hashcoder.service.UserService"></bean>
+	<bean id="healthProffesionalService" class="com.hashcoder.service.HealthProffesionalService"></bean>
+	
+	<bean id="loginDB" class="com.hashcoder.database.LoginDB"></bean>
+	<bean id="userDB" class="com.hashcoder.database.UserDB"></bean>
+	<bean id="healthProffesionalDB" class="com.hashcoder.database.HealthProffesionalDB"></bean>
+	<bean id="postDB" class="com.hashcoder.database.PostDB"></bean>
+	<bean id="queryDB" class="com.hashcoder.database.QueryDB"></bean>
+	<bean id="answerDB" class="com.hashcoder.database.AnswerDB"></bean>
+	<bean id="diseaseDB" class="com.hashcoder.database.DiseaseDB"></bean>
+	
+	
+	
+</beans>
